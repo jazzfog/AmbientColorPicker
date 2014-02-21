@@ -1,4 +1,4 @@
-#Color Picker Component for ExtJs 4
+##Color Picker Component for ExtJs 4
 
 Isn't it cool?
 
@@ -53,3 +53,62 @@ this.examplePanel = Ext.create('Ext.panel.Panel', {
 });
 
 ```
+
+**More advanced example**
+
+Context for this snippet may be any Panel-like component
+
+Here, we will create two text fields and a button.
+
+Button will open Color Picker window and text fields will display selected colors.
+First field - selected in color picker, but not confirmed by clicking "Done" color
+Second field - confirmed by clicking "Done" color (so you can "cancel" changing of color any time without consequences)
+
+```JavaScript
+this.items = [
+	{
+		xtype: 'textfield',
+		fieldStyle: 'background-image: none;',
+		id: 'myColorIndicator-1',
+		margin: '0 10 0 0'
+	},
+	{
+		xtype: 'textfield',
+		fieldStyle: 'background-image: none;',
+		id: 'myColorIndicator-2',
+		margin: '0 10 0 0'
+	},
+	{
+		xtype: 'button',
+		text: 'Select color',
+		handler: function () {
+
+			this.colorPicker = Ext.create('Ext.ux.picker.color.ambientcolorpicker.Window', {
+				autoShow: true,
+				conf: {
+					color: 'orange'
+				},
+				listeners: {
+					colorSelected: function (el, colorString, colorObj) {
+						var field = Ext.ComponentQuery.query('#myColorIndicator-1')[0];
+						field.setValue(colorString);
+						field.setFieldStyle('background-color: '+colorString)
+					},
+					colorSelectedDone: function (el, colorString, colorObj) {
+						var field = Ext.ComponentQuery.query('#myColorIndicator-2')[0];
+						field.setValue(colorString);
+						field.setFieldStyle('background-color: '+colorString)
+					}
+				}
+			});
+
+		},
+		scope: this
+	}
+];
+```
+
+**Customization**
+
+1. These componends are axtensions to standart Ext.panel.Panel and Ext.window.Window so treat them like you usually do.
+2. You can customize component using Spectrum config, just use `conf:` parameter, as it was done in example above to change default settings (in this case default color). Learn more about how to customize Spectrum on its [official page](http://bgrins.github.io/spectrum/).
