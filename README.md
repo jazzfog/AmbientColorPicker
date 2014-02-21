@@ -13,11 +13,11 @@ Requires
 1. [Download](http://jquery.com/download/) and save in your web directory the last version of jQuery (for example put file like this /JavaScript/jquery.js)
 2. [Download](http://bgrins.github.io/spectrum/), unpack and save in your web directory the last version of Spectrum plugin (for example put archive contents in /JavaScript/Spectrum folder)
 3. Add to your main html file these lines of code
-  * <script type="text/javascript" src="/JavaScript/jquery.js"></script>
-  * <script type="text/javascript" src="/JavaScript/Spectrum/spectrum.js"></script>
-  * <link rel="stylesheet" type="text/css" href="/JavaScript/Spectrum/spectrum.css">
+  * &lt;script type="text/javascript" src="/JavaScript/jquery.js">&lt;/script>
+  * &lt;script type="text/javascript" src="/JavaScript/Spectrum/spectrum.js">&lt;/script>
+  * &lt;link rel="stylesheet" type="text/css" href="/JavaScript/Spectrum/spectrum.css">
 
-Now you are ready for first usage (&lt;)
+Now you are ready for first usage
 
 Color picker comes with two components: Panel and Window:
 
