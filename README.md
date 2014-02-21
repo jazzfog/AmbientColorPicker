@@ -1,4 +1,4 @@
-Color Picker Component for ExtJs 4
+#Color Picker Component for ExtJs 4
 
 @Author Pavel Pushkaryov
 
