@@ -22,7 +22,8 @@ Install and use Ambient Color Picker in few easy steps:
   * &lt;link rel="stylesheet" type="text/css" href="/JavaScript/Spectrum/spectrum.css">
 4. Download *Ambient Color Picker*, unpack it and put into your ExtJs UX directory.
 
-If you do not know where is your UX directory - probably you do not have it. Create in web root of your project directory new sub-directory named "ux" and add in your app.js this snippet:
+If you do not know where is your UX directory - probably you do not have it.
+Create in web root of your project directory new sub-directory named "ux" and add at beginning of your app.js this snippet:
 
 ```JavaScript
 Ext.Loader.setConfig({
