@@ -1,3 +1,8 @@
+/**
+ * AmbientColorPicker
+ * Window component
+ * https://github.com/jazzfog/AmbientColorPicker
+ */
 Ext.define('Ext.ux.picker.color.ambientcolorpicker.Window', {
 	extend: 'Ext.window.Window',
 
@@ -46,6 +51,10 @@ Ext.define('Ext.ux.picker.color.ambientcolorpicker.Window', {
 		];
 
 		this.callParent(arguments);
+	},
+
+	getColorPickerCmp: function () {
+		return this.colorPicker;
 	},
 
 	onOkClick: function () {

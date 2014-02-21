@@ -1,3 +1,8 @@
+/**
+ * AmbientColorPicker
+ * Panel component
+ * https://github.com/jazzfog/AmbientColorPicker
+ */
 Ext.define('Ext.ux.picker.color.AmbientColorPicker', {
 
 	extend: 'Ext.panel.Panel',
@@ -9,6 +14,8 @@ Ext.define('Ext.ux.picker.color.AmbientColorPicker', {
 	spectrumWidth: 250,
 
 	spectrumCss: '',
+
+	defaultColor: '#000000',
 
 	/**
 	 * Config for user's Spectrum color picker customizations
@@ -22,7 +29,6 @@ Ext.define('Ext.ux.picker.color.AmbientColorPicker', {
 	 * @private
 	 */
 	_defaultConf: {
-		color: 'black',
 		flat: true,
 		showInput: true,
 		showInitial: true,
@@ -58,6 +64,11 @@ Ext.define('Ext.ux.picker.color.AmbientColorPicker', {
 			'colorSelected'
 		);
 
+		if (typeof this.conf.color === 'string') {
+			this.defaultColor = this.conf.color;
+		}
+		this._defaultConf.color = this.defaultColor;
+
 		this.colorPickerIdent = 'colorPicker-' + this.id;
 
 		var css =
@@ -74,14 +85,19 @@ Ext.define('Ext.ux.picker.color.AmbientColorPicker', {
 		this.html = css + '<input type="text" id="' + this.colorPickerIdent + '" />';
 
 		this.on({
-			afterrender: this.onAfteRrender,
+			beforerender: this.onBeforeRrender,
+			afterrender: this.onAfterRrender,
 			scope: this
 		});
 
 		this.callParent(arguments);
 	},
 
-	onAfteRrender: function () {
+	onBeforeRrender: function () {
+		//...
+	},
+
+	onAfterRrender: function () {
 		this.initSpectrum();
 	},
 
@@ -133,13 +149,17 @@ Ext.define('Ext.ux.picker.color.AmbientColorPicker', {
 
 		rawObject = (typeof rawObject == 'undefined') ? false : !!rawObject;
 
-		var color = this.getJqueryObject().spectrum('get');
+		var colorObj = this.getJqueryObject().spectrum('get');
 
 		if (rawObject) {
-			return color;
+			return this.isColorObject(colorObj) ? colorObj : null;
 		} else {
-			return color ? color.toString() : '';
+			return this.isColorObject(colorObj) ? colorObj.toString() : this.defaultColor;
 		}
+	},
+
+	isColorObject: function (obj) {
+		return typeof obj === 'object' && typeof obj.getAlpha === 'function';
 	}
 
 });
