@@ -52,6 +52,8 @@ this.examplePanel = Ext.create('Ext.panel.Panel', {
 
 ```
 
+Read more about `[Download](http://docs.sencha.com/extjs/4.2.2/#!/api/Ext.Loader-method-setConfig)setConfig()` in official ExtJS Documentation
+
 **More advanced example**
 
 Context for this snippet may be any Panel-like component
