@@ -17,7 +17,7 @@ Requires
   * <script type="text/javascript" src="/JavaScript/Spectrum/spectrum.js"></script>
   * <link rel="stylesheet" type="text/css" href="/JavaScript/Spectrum/spectrum.css">
 
-Now you are ready for first usage
+Now you are ready for first usage (&lt;)
 
 Color picker comes with two components: Panel and Window:
 
