@@ -61,8 +61,8 @@ Context for this snippet may be any Panel-like component
 Here, we will create two text fields and a button.
 
 Button will open Color Picker window and text fields will display selected colors.
-First field - selected in color picker, but not confirmed by clicking "Done" color
-Second field - confirmed by clicking "Done" color (so you can "cancel" changing of color any time without consequences)
+First field - selected in color picker, but not confirmed by clicking `Done` color
+Second field - confirmed by clicking `Done` color (so you can `Cancel` changing of color any time without consequences)
 
 ```JavaScript
 this.items = [
@@ -107,6 +107,11 @@ this.items = [
 	}
 ];
 ```
+
+Event `colorSelected` available for both `Ext.ux.picker.color.ambientcolorpicker.Window` and `Ext.ux.picker.color.AmbientColorPicker`
+Event `colorSelectedDone` only for `Ext.ux.picker.color.ambientcolorpicker.Window`
+
+For both components methods `getValue()` and `setValue(<color>)` are available. You can get and set colors at any time.
 
 **Customization**
 
