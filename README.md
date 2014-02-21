@@ -1,16 +1,14 @@
 ##Color Picker Component for ExtJs 4
 
-Isn't it cool?
+Ambient color picker is a ExtJs component which uses [jQuery](http://jquery.com) and its plugin [Spectrum] (http://bgrins.github.io/spectrum).
+
+*Isn't it cool?*
 
 ![ExtJS 4 Color Picker](http://fog.od.ua/fx/ext-js-components/color-picker/ExtJs-4-color-picker.png "ExtJS 4 Color Picker")
 
-
-Ambient color picker is a ExtJs component which uses [jQuery](http://jquery.com) and its plugin [Spectrum] (http://bgrins.github.io/spectrum).
-
-Compatible with ExtJs 4.x
-
-
 **How to install**
+
+Components are compatible with ExtJs 4.x +
 
 Install and use Ambient Color Picker in few easy steps:
 
@@ -34,7 +32,7 @@ Ext.Loader.setConfig({
 });
 ```
 
-Now you are ready for first usage
+**Usage example**
 
 Color picker comes with two components: Panel and Window:
 
@@ -109,6 +107,7 @@ this.items = [
 ```
 
 Event `colorSelected` available for both `Ext.ux.picker.color.ambientcolorpicker.Window` and `Ext.ux.picker.color.AmbientColorPicker`
+
 Event `colorSelectedDone` only for `Ext.ux.picker.color.ambientcolorpicker.Window`
 
 For both components methods `getValue()` and `setValue(<color>)` are available. You can get and set colors at any time.
