@@ -1,6 +1,6 @@
 # Color Picker for ExtJs 4
 
-Ambient Color Picker is a ExtJs component which uses [jQuery](http://jquery.com) and its plugin [Spectrum] (http://bgrins.github.io/spectrum).
+Ambient Color Picker is an ExtJs component that uses [jQuery](http://jquery.com) and its plugin [Spectrum] (http://bgrins.github.io/spectrum).
 
 *Isn't it cool?*
 
